@@ -1,4 +1,5 @@
 # 1- Como criar
+import time
 
 import numpy
 
@@ -9,56 +10,54 @@ import numpy
 # Outra vantagem: por trabalhar com um só tipo de dado, o ndarray tem um desempenho muito melhor se comparado com listas
 
 # # 1 -Exemplo de criação:
-# lista_num = numpy.zeros(100000)
-# print(f' 1- Conteúdo da Lista: {lista_num}, o tamanho: {len(lista_num)}')
-# lista_num = numpy.ones(100000)
-# print(f' 2- Conteúdo da Lista: {lista_num}, o tamanho: {len(lista_num)}')
-# lista_num = numpy.linspace(10, 1000, 1000)
-# print(f' 3- Conteúdo da Lista: {lista_num}, o tamanho: {len(lista_num)}')
+#lista_num = numpy.zeros(100000)
+#print(f' 1- Conteúdo da Lista: {lista_num}, o tamanho: {len(lista_num)}')
+#lista_num = numpy.ones(100000)
+#print(f' 2- Conteúdo da Lista: {lista_num}, o tamanho: {len(lista_num)}')
+#lista_num = numpy.linspace(10, 1000, 1000)
+#print(f' 3- Conteúdo da Lista: {lista_num}, o tamanho: {len(lista_num)}')
 
 # # 2- Comparar desempenho
-# start_time = time.time()
-# lista = [0] * 1000000000
-# end_time = time.time()
-# elapsed_time = end_time - start_time
-# print(f'A criação de lista de 1 bilhão de elementos levou: {elapsed_time}')
-#
-# start_time = time.time()
-# ndarray = numpy.zeros(1000000000)
-# end_time = time.time()
-# elapsed_time = end_time - start_time
-# print(f'A criação de um ndarray de 1 bilhão de elementos levou: {elapsed_time}')
+#start_time = time.time()
+#lista = [0] * 1000000000
+#end_time = time.time()
+#elapsed_time = end_time - start_time
+#print(f'A criação de lista de 1 bilhão de elementos levou: {elapsed_time}')
+
+#start_time = time.time()
+#ndarray = numpy.zeros(1000000000)
+#end_time = time.time()
+#elapsed_time = end_time - start_time
+#print(f'A criação de um ndarray de 1 bilhão de elementos levou: {elapsed_time}')
 
 # # 3- Dá para fazer ainda melhor se definirmo o tipo de dado, exemplo: dado tipo int8 (para valores de 0 - 255)
-# start_time = time.time()
-# ndarray_uint8 = numpy.zeros(1000000000, dtype='uint8')
-# end_time = time.time()
-# elapsed_time = end_time - start_time
-# print(f'A criação de um ndarray de 1 bilhão de elementos em int de 8 não sinalizado levou: {elapsed_time}')
+start_time = time.time()
+vndarray_uint8 = numpy.zeros(1000000000, dtype='uint8')
+end_time = time.time()
+elapsed_time = end_time - start_time
+print(f'A criação de um ndarray de 1 bilhão de elementos em int de 8 não sinalizado levou: {elapsed_time}')
 
 # # 3- Podemos criar vetores, matrizes e tensores
-# rng = numpy.random.default_rng()  # numpy tem sua métodos random inclusos
-# vetor = rng.random(4)
-# print(f'Array de 1 Dimensão (VETOR) randômico:\n{vetor}\n')
-# matriz = rng.random([4, 4])
-# print(f'Array de 2 Dimensões (MATRIZ) randômico:\n{matriz}\n')
-# tensor = rng.random([4, 4, 4])
-# print(f'Array de 3  Dimensões (TENSOR) randômico:\n{tensor}\n')
+rng = numpy.random.default_rng()  # numpy tem sua métodos random inclusos
+vetor = rng.random(4)
+print(f'Array de 1 Dimensão (VETOR) randômico:\n{vetor}\n')
+matriz = rng.random([4, 4])
+print(f'Array de 2 Dimensões (MATRIZ) randômico:\n{matriz}\n')
+tensor = rng.random([4, 4, 4])
+print(f'Array de 3  Dimensões (TENSOR) randômico:\n{tensor}\n')
 
+import numpy
 # # 4- Posso ordenar esses vetores
-# rng = numpy.random.default_rng()
-# matriz = rng.random([4, 4])
-# m_coluna = numpy.sort(matriz, axis=0)
-# m_linha = numpy.sort(matriz, axis=1)
-# m_col_lin = numpy.sort(m_linha, axis=1)
-# print(f'Ordenação dentro coluna:\n{m_coluna}')
-# print(f'Ordenação dentro linha :\n{m_linha}')
-# print(f'Ordenação dentro coluna e linha :\n{m_col_lin}')
+rng = numpy.random.default_rng()
+matriz = rng.random([4, 4])
+m_coluna = numpy.sort(matriz, axis=0)
+m_linha = numpy.sort(matriz, axis=1)
+m_col_lin = numpy.sort(m_linha, axis=1)
+print(f'Ordenação dentro coluna:\n{m_coluna}')
+print(f'Ordenação dentro linha :\n{m_linha}')
+print(f'Ordenação dentro coluna e linha :\n{m_col_lin}')
 
 # 5 - Agora vamos preparar alguns ndarrays para serem representados por gráficos:
-a = 3 / 4
-b = 2 / 4
-c = 1 / 4
 vetor_a = numpy.linspace(10, 1000, 100)
 vetor_b = numpy.linspace(10, 3000, 100)
 vetor_c = numpy.linspace(10, 8000, 100)
